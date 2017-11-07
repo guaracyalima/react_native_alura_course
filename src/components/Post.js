@@ -15,36 +15,25 @@ import {
   ScrollView,
   FlatList
 } from 'react-native';
-import Post from './src/components/Post';
 
 const width = Dimensions.get('screen').width;
-export default class App extends Component {
+export default class Post extends Component {
   render() {
-
-    const fotos = [
-      {
-        id: 1,
-        usuario: 'mingau'
-      },
-      {
-        id: 2,
-        usuario: 'maguinho'
-      },
-      {
-        id: 3,
-        usuario: 'mang'
-      },
-    ];
     return (
-      <FlatList
-        style={ styles.container }
-        keyExtractor={item => item.id}
-        data={ fotos }
-        renderItem={
-            ( { item } ) =>
-            <Post />
-         }
-      />
+              <View>
+              <View style={ styles.cabecalho  }>
+              <Image
+                      source={ require('../../resources/img/1.jpg') }
+                      style={ styles.fotPerfil }/>
+
+                <Text>{ item.usuario }</Text>
+              </View>
+
+                <Image
+                        source={ require('../../resources/img/1.jpg') }
+                        style={ styles.foto }/>
+              </View>
+
 
     );
   }
@@ -69,4 +58,3 @@ const styles = StyleSheet.create({
     height: width
   }
 })
-// AppRegistry.registerComponent('InstaluraMobile');
